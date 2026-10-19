@@ -6,9 +6,18 @@ namespace ActividadTDDApp
 {
     public class Funciones
     {
-        public static long CalcularFactorial(int n)
+
+        private const long ERROR_FACTORIAL = -1;
+        public static long CalcularFactorial(int number)
         {
-            throw new NotImplementedException();
+            if (number < 0)
+                return ERROR_FACTORIAL;
+
+            long resultado = 1;
+            for (int i = 2; i <= number; i++)
+                resultado *= i;
+
+            return resultado;
         }
     }
 }
