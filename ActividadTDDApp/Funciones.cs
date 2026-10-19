@@ -8,6 +8,8 @@ namespace ActividadTDDApp
     {
 
         private const long ERROR_FACTORIAL = -1;
+        private const int LONGITUD_MINIMA = 8;
+        private const char CARACTER_OBLIGATORIO = '_';
         public static long CalcularFactorial(int number)
         {
             if (number < 0)
@@ -18,6 +20,20 @@ namespace ActividadTDDApp
                 resultado *= i;
 
             return resultado;
+        }
+
+        public static bool EsContrasenyaValida(string contrasenya)
+        {
+            if (string.IsNullOrEmpty(contrasenya))
+                return false;
+
+            if (contrasenya.Length < LONGITUD_MINIMA)
+                return false;
+
+            if (!contrasenya.Contains(CARACTER_OBLIGATORIO))
+                return false;
+
+            return true;
         }
     }
 }
