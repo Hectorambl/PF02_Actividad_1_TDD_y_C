@@ -24,7 +24,7 @@ namespace TestActividadTDDApp
         [DataRow("abc", false)]
         [DataRow("abcdef", false)]
         [DataRow("abcdefg", false)] 
-        [DataRow("abcdefgh", true)]
+        [DataRow("abc_defgh", true)]
         [DataRow("Hola1234_", true)]
         public void EsContrasenyaValida_VariosCasos(string contrasenya, bool esperado)
         {
